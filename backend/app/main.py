@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,14 +17,24 @@ from app.routers import (
 from app.seed import SYNTHETIC_DATASET_NOTICE, seed_database
 from app.services.export_service import write_deliverable_extracts_to_disk
 
+_DB_INITIALIZED = False
+
 
 def init_db_and_seed() -> None:
+    global _DB_INITIALIZED
+    if _DB_INITIALIZED:
+        return
     Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     try:
         seed_database(db)
         apply_sql_views()
-        write_deliverable_extracts_to_disk(db)
+        if not os.getenv("VERCEL"):
+            try:
+                write_deliverable_extracts_to_disk(db)
+            except OSError:
+                pass
+        _DB_INITIALIZED = True
     finally:
         db.close()
 
@@ -32,6 +43,11 @@ def init_db_and_seed() -> None:
 async def lifespan(app: FastAPI):
     init_db_and_seed()
     yield
+
+
+# Ensure DB & views are seeded on serverless cold starts even if lifespan is skipped
+if os.getenv("VERCEL"):
+    init_db_and_seed()
 
 
 app = FastAPI(
@@ -59,6 +75,16 @@ app.include_router(feedback.router)
 app.include_router(experiments.router)
 app.include_router(roadmap.router)
 app.include_router(exports.router)
+
+
+@app.get("/")
+def root_info():
+    return {
+        "service": settings.project_name,
+        "version": settings.version,
+        "docs_url": "/docs",
+        "health_url": "/api/health",
+    }
 
 
 @app.get("/api/health")

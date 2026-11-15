@@ -13,12 +13,17 @@ def resolve_database_url() -> tuple[str, str]:
     Resolve the active SQLAlchemy database URL and engine mode.
     Uses PostgreSQL when DATABASE_URL is configured; falls back transparently
     to a local relational SQLite file when PostgreSQL is not configured.
+    On serverless read-only filesystems (e.g. Vercel), uses /tmp/threadline.db.
     """
     configured_url = os.getenv("DATABASE_URL", "").strip() or settings.database_url
     if configured_url:
         mode = "postgresql" if "postgres" in configured_url.lower() else "custom_sql"
         return configured_url, mode
-    return f"sqlite:///{DEFAULT_SQLITE_PATH.as_posix()}", "sqlite_local_fallback"
+    if os.getenv("VERCEL") or not os.access(BASE_DIR, os.W_OK):
+        sqlite_path = Path("/tmp/threadline.db")
+    else:
+        sqlite_path = DEFAULT_SQLITE_PATH
+    return f"sqlite:///{sqlite_path.as_posix()}", "sqlite_local_fallback"
 
 
 ACTIVE_DATABASE_URL, ACTIVE_DB_MODE = resolve_database_url()
