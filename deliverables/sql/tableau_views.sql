@@ -1,0 +1,2 @@
+-- Copy of Migration 002 for Deliverables Package
+-- See backend/migrations/002_tableau_views.sql for live Tableau SQL views

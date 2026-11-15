@@ -1,0 +1,41 @@
+﻿Issue Type,Issue Key,Epoch / Epic Name,Summary,Description (User Story & Problem Evidence),Acceptance Criteria,RICE Reach,RICE Impact,RICE Confidence (%),Effort (Person-Weeks),RICE Priority Score,Priority,Status,Sprint,Assignee
+Story,THRD-102,Fit Confidence & Size Intelligence,Persistent 'In-My-Size' & Fit-Profile Facet Bar on Search/PLP,"User Story: As a customer, I want relevant products to appear when I search using a category and size—along with upfront 'Runs Small / True to Size' badges—so that I can find suitable products faster and buy with confidence.
+
+Evidence: 38% of negative customer reviews cite 'Size and fit' mismatches (e.g., Solstice Trouser & Seraphina Silk Midi running small), and funnel analytics reveal a 41% drop-off between PDP view and Add-to-Bag for structured non-stretch garments.
+
+Business Impact: +24% Add-to-Bag lift in Treatment, -3.2% size-related return rate","1. Display one-tap size pills (XS–XXL) and Fit Profile filters ('True to Size', 'Relaxed Tailored', 'Runs Small - Size Up') at the top of Search. | 2. Surface verified buyer fit callout badges directly on product cards in the treatment variant. | 3. Achieve >= 18% relative lift in Search-to-Bag conversion in A/B Experiment `exp_semantic_size_fit_filters` at p < 0.05.",16000,2.0,95,2.5,12160.0,Critical,In Progress,Sprint 14 (Current),Ananya Rao (PM - Discovery)
+Story,THRD-101,Intelligent Search & Synonym Discovery,Semantic Occasion & Fabric Synonym Query Expansion,"User Story: As a customer searching by occasion or fabric feel, I want relevant products to appear even when my phrasing differs from catalog SKU titles so that I never hit a dead-end zero-result screen.
+
+Evidence: Search Intelligence logs show 18.4% of searches hit zero-result or low-relevance walls on occasion/cultural terms ('haldi guest outfit', 'breathable summer office wear', 'linen co-ord set'), driving a 54% search abandonment rate on multi-word queries.
+
+Business Impact: +3.8% Search-to-PDP CTR, +₹18.4L projected monthly GMV","1. Map 150+ occasion, climate, and silhouette synonyms to structured product attributes (occasion, fabric, subcategory). | 2. Reduce zero-result search rate from 14.2% to < 3.5% across top 200 search queries. | 3. When exact matches = 0, automatically render semantic fallback recommendations with transparent match explanation tags. | 4. Track `search_submitted` with `synonym_expanded: true` property in Mixpanel and PostgreSQL events.",14500,2.5,90,3.0,10875.0,Critical,In Progress,Sprint 14 (Current),Ananya Rao (PM - Discovery)
+Story,THRD-103,Fit Confidence & Size Intelligence,Verified Buyer Fit Distribution & Garment Measurement Matrix on PDP,"User Story: As a fit-conscious shopper viewing a Product Detail Page, I want to see aggregated buyer fit consensus ('68% say Runs Small — Size Up') and exact garment measurements so that I select the right size on my first order.
+
+Evidence: GenAI Customer Intelligence identified 34 reviews explicitly requesting garment waist/hip/instep measurements rather than generic body charts (especially on `prd_002`, `prd_005`, `prd_021`).
+
+Business Impact: +2.9% PDP-to-Cart CVR, -₹6.2L monthly reverse-logistics cost","1. Render visual fit spectrum bar (Runs Small / True to Size / Runs Large) aggregated live from verified `reviews` records. | 2. Display fabric stretch index, GSM weight, and specific fit guidance notes above the fold near the size selector. | 3. Reduce PDP-to-Bag hesitation time by 15% and lower exchange requests on non-stretch linen/selvedge SKUs by 20%.",12000,2.0,90,2.0,10800.0,High,Shipped,Sprint 13,Rohan Mehta (PM - PDP Experience)
+Story,THRD-104,Intelligent Search & Synonym Discovery,Zero-Result Recovery Engine with Curated Editorial Fallbacks,"User Story: As a shopper whose specific search query yields zero exact matches, I want immediate suggested query refinements and closest-match capsule pieces so I can continue my discovery journey.
+
+Evidence: Prior to recovery module, 81% of sessions encountering a 0-result search exited within 25 seconds without viewing a single product page.
+
+Business Impact: Recovers ~2,400 lost discovery sessions/month",1. Detect 0-result queries in real time and log `zero_result: true` in `searches` table. | 2. Present clickable trending query chips and 4 curated high-converting products matching any partial token or user preferred category. | 3. Recover >= 35% of zero-result sessions into a subsequent `product_viewed` event.,6800,2.0,85,1.5,7706.7,High,Shipped,Sprint 13,Ananya Rao (PM - Discovery)
+Story,THRD-106,Checkout & Bag Conversion,Transparent Delivery ETA & Upfront Tiered Promo Calculator in Bag,"User Story: As a shopper reviewing my bag, I want to see instant free-shipping eligibility, city-tier delivery estimates, and one-click promo application before entering checkout.
+
+Evidence: Funnel diagnostics indicate a 34% drop-off between `add_to_cart` and `checkout_started`, corroborated by reviews citing surprise shipping timelines for Tier-2 cities and hidden promo inputs.
+
+Business Impact: -8.5% Cart Abandonment Rate","1. Display free-shipping threshold progress bar (Complimentary Express Shipping over ₹5,000) inside Bag page. | 2. Provide interactive city selector with realistic Tier-1/Tier-2/Tier-3 delivery window estimates. | 3. Improve Bag-to-Checkout progression rate from 66% to >= 75%.",8200,1.5,85,2.0,5227.5,High,Next Sprint,Sprint 15,Karthik Subramanian (PM - Checkout)
+Story,THRD-105,Visual Merchandising & Photography,Natural Daylight Color Swatch & Fabric Drape Video Loop on PDP,"User Story: As an online fashion buyer, I want to toggle between studio lookbook photography and natural daylight fabric close-ups so that I accurately judge color undertone and texture.
+
+Evidence: Feedback analysis shows 14% of neutral/negative reviews mention studio lighting color discrepancy (e.g., Ecru Sand vs stark white on `prd_003`) or inability to gauge fabric stiffness.
+
+Business Impact: +1.4% PDP conversion on light/pastel colorways",1. Support dual-image hover and gallery inspection with color hex accuracy tags on all 24 catalog SKUs. | 2. Add GSM fabric weight and weave transparency notes in the PDP specification accordion. | 3. Decrease 'Color/Image mismatch' feedback share by 40% over 60 days.,9500,1.5,80,2.5,4560.0,Medium,Next Sprint,Sprint 15,Devika Nair (Design Lead)
+Story,THRD-108,GenAI Product Operations,Automated Weekly Voice-of-Customer (VoC) & Return-Risk Digest,"User Story: As a Product Manager, I want an automated LLM synthesis pipeline that clusters weekly customer reviews by complaint category and links every insight to verifiable review IDs.
+
+Evidence: Merchandising and PM teams previously spent 6 hours/week manually tagging spreadsheet reviews to spot high-return SKUs.
+
+Business Impact: Saves 6 hrs/wk PM ops time; flags high-return SKUs 2 weeks earlier",1. Provide structured JSON output categorizing complaints across 7 taxonomy buckets with verbatim review citations. | 2. Include deterministic SQL fallback when external LLM API keys are unconfigured. | 3. Support one-click XLSX/CSV export for weekly merchandising standups.,4500,1.5,95,1.5,4275.0,High,Shipped,Sprint 13,Ananya Rao (PM - Discovery)
+Story,THRD-107,Personalization & Cross-Sell,'Complete the Atelier Look' Cross-Category Outfit Pairing Engine,"User Story: As a shopper buying a hero garment (such as a linen blazer), I want curated pairing recommendations across complementary categories (trousers, loafers, knit shells) so I can assemble a cohesive outfit.
+
+Evidence: Exploratory experiment `exp_editorial_lookbook_bundle` shows +11% AOV among Editorial Curators when complementary trousers/loafers are suggested alongside blazers, though current sample size requires expansion.
+
+Business Impact: +9% Multi-item units per order",1. Generate cross-category outfit recommendations on PDP based on shared `occasion` and complementary `subcategory`. | 2. Track `recommendation_clicked` and multi-item order attach rate. | 3. Scale experiment traffic to reach n=400 per arm before full rollout decision.,7400,1.0,70,3.0,1726.7,Medium,Planned Q1,Sprint 16,Ananya Rao (PM - Discovery)

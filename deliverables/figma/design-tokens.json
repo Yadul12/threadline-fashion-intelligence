@@ -1,0 +1,37 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "meta": {
+    "systemName": "THREADLINE Editorial & Product Intelligence Design System",
+    "version": "1.0.0"
+  },
+  "color": {
+    "storefront": {
+      "canvas": { "$value": "#FAF8F5", "$type": "color", "description": "Warm archival paper background" },
+      "surfaceSecondary": { "$value": "#F5F1EA", "$type": "color", "description": "Editorial lookbook callout surface" },
+      "inkPrimary": { "$value": "#181615", "$type": "color", "description": "Deep charcoal editorial ink" },
+      "inkMuted": { "$value": "#655E57", "$type": "color", "description": "Warm stone secondary copy" },
+      "accentBurgundy": { "$value": "#7C2D26", "$type": "color", "description": "Primary fashion editorial accent" },
+      "accentTerracotta": { "$value": "#9E3B33", "$type": "color", "description": "Interactive hover & fit alert accent" },
+      "borderHairline": { "$value": "#E6E0D6", "$type": "color", "description": "1px architectural grid rule" }
+    },
+    "pmWorkspace": {
+      "canvas": { "$value": "#F4F3F0", "$type": "color", "description": "Neutral analytical background" },
+      "sidebarBg": { "$value": "#141413", "$type": "color", "description": "Compact dark navigation rail" },
+      "cardSurface": { "$value": "#FFFFFF", "$type": "color", "description": "High-contrast data table & chart surface" },
+      "borderRule": { "$value": "#E2E0DC", "$type": "color", "description": "Crisp 1px table & panel divider" },
+      "statusWinner": { "$value": "#2E5A3C", "$type": "color", "description": "Statistically significant positive lift" },
+      "statusExploratory": { "$value": "#D4B895", "$type": "color", "description": "Under-powered / exploratory test warning" }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "editorialDisplay": { "$value": "Cormorant Garamond, Georgia, serif", "$type": "fontFamily" },
+      "uiSans": { "$value": "Plus Jakarta Sans, system-ui, sans-serif", "$type": "fontFamily" },
+      "tabularMono": { "$value": "JetBrains Mono, monospace", "$type": "fontFamily" }
+    }
+  },
+  "spacing": {
+    "gridMax": { "$value": "1400px", "$type": "dimension" },
+    "sidebarWidth": { "$value": "256px", "$type": "dimension" }
+  }
+}

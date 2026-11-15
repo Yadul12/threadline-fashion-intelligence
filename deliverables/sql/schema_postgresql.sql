@@ -1,0 +1,3 @@
+-- Copy of Migration 001 for Deliverables Package
+-- See backend/migrations/001_initial_schema.sql for live schema migration
+-- Full PostgreSQL DDL with Foreign Keys, Check Constraints, and B-Tree Indexes

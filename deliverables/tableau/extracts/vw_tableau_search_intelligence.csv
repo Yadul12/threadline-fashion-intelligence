@@ -1,0 +1,35 @@
+﻿normalized_query,experiment_variant,search_volume,avg_results_count,zero_result_searches,clicked_searches,abandoned_searches,bag_conversions,order_conversions,search_ctr_pct,search_cvr_pct
+breathable summer office wear,control,7,0.0,7,0,7,1,1,0.0,14.29
+breathable summer office wear,treatment,3,0.0,3,0,3,1,1,0.0,33.33
+chore jacket,control,17,4.0,0,10,7,6,4,58.82,23.53
+chore jacket,treatment,22,4.0,0,20,2,9,4,90.91,18.18
+haldi guest outfit,control,15,0.0,15,0,12,1,0,0.0,0.0
+haldi guest outfit,treatment,2,0.0,2,0,1,0,0,0.0,0.0
+kurta set silk,control,5,0.0,5,0,3,1,0,0.0,0.0
+kurta set silk,treatment,1,0.0,1,0,1,0,0,0.0,0.0
+leather loafers,control,16,6.0,0,9,7,3,0,56.25,0.0
+leather loafers,treatment,16,6.0,0,14,2,1,1,87.5,6.25
+leather tote bag,control,15,5.0,0,6,9,6,1,40.0,6.67
+leather tote bag,treatment,12,5.0,0,9,3,7,3,75.0,25.0
+linen blazer,control,9,8.0,0,7,2,3,0,77.78,0.0
+linen blazer,treatment,23,8.0,0,17,6,12,3,73.91,13.04
+linen shirt,control,15,11.0,0,8,7,4,3,53.33,20.0
+linen shirt,treatment,20,11.0,0,17,3,13,8,85.0,40.0
+merino cardigan,control,14,7.0,0,9,5,3,2,64.29,14.29
+merino cardigan,treatment,14,7.0,0,11,3,10,6,78.57,42.86
+occasion dress,control,20,12.0,0,12,8,4,1,60.0,5.0
+occasion dress,treatment,26,12.0,0,22,4,10,5,84.62,19.23
+oversized blazer,control,14,7.0,0,7,7,6,3,50.0,21.43
+oversized blazer,treatment,21,7.0,0,16,5,6,2,76.19,9.52
+petite friendly maxi,control,7,0.0,7,0,7,1,0,0.0,0.0
+petite friendly maxi,treatment,3,0.0,3,0,2,1,0,0.0,0.0
+pleated midi skirt,control,19,5.0,0,14,5,7,2,73.68,10.53
+pleated midi skirt,treatment,12,5.0,0,6,6,1,1,50.0,8.33
+selvedge denim,control,17,8.0,0,12,5,5,3,70.59,17.65
+selvedge denim,treatment,20,8.0,0,15,5,8,4,75.0,20.0
+silk midi dress,control,15,6.0,0,7,8,6,2,46.67,13.33
+silk midi dress,treatment,6,6.0,0,5,1,1,0,83.33,0.0
+vegan suede tote,control,8,0.0,8,0,8,0,0,0.0,0.0
+vegan suede tote,treatment,3,0.0,3,0,3,0,0,0.0,0.0
+wide leg trouser,control,22,9.0,0,15,7,6,3,68.18,13.64
+wide leg trouser,treatment,23,9.0,0,16,7,9,4,69.57,17.39

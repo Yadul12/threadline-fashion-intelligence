@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- Tableau Desktop 2024.1 Workbook Specification for THREADLINE — Fashion Discovery Intelligence -->
+<workbook original-version='18.1' source-build='2024.1.0 (20241.24.0308.0326)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='THREADLINE_Daily_Funnel (CSV Extract)' inline='true' name='federated.threadline_daily_funnel' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='vw_tableau_daily_funnel' name='textscan.threadline_funnel'>
+            <connection class='textscan' directory='./extracts' filename='vw_tableau_daily_funnel.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.threadline_funnel' name='vw_tableau_daily_funnel.csv' table='[vw_tableau_daily_funnel#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='activity_date' ordinal='0' />
+            <column datatype='string' name='device_type' ordinal='1' />
+            <column datatype='string' name='acquisition_channel' ordinal='2' />
+            <column datatype='integer' name='total_sessions' ordinal='3' />
+            <column datatype='integer' name='active_users' ordinal='4' />
+            <column datatype='integer' name='homepage_sessions' ordinal='5' />
+            <column datatype='integer' name='search_sessions' ordinal='6' />
+            <column datatype='integer' name='search_click_sessions' ordinal='7' />
+            <column datatype='integer' name='pdp_sessions' ordinal='8' />
+            <column datatype='integer' name='wishlist_sessions' ordinal='9' />
+            <column datatype='integer' name='atc_sessions' ordinal='10' />
+            <column datatype='integer' name='checkout_sessions' ordinal='11' />
+            <column datatype='integer' name='order_sessions' ordinal='12' />
+            <column datatype='real' name='gross_revenue_inr' ordinal='13' />
+          </columns>
+        </relation>
+      </connection>
+      <column caption='Session Conversion Rate' datatype='real' name='[Calculation_Session_CVR]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([order_sessions]) / ZN(SUM([total_sessions]))' />
+      </column>
+      <column caption='Search-to-PDP Rate' datatype='real' name='[Calculation_Search_CTR]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([search_click_sessions]) / ZN(SUM([search_sessions]))' />
+      </column>
+      <column caption='PDP Add-to-Bag Rate' datatype='real' name='[Calculation_ATC_Rate]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([atc_sessions]) / ZN(SUM([pdp_sessions]))' />
+      </column>
+      <column caption='Cart Abandonment Rate' datatype='real' name='[Calculation_Cart_Abandonment]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1.0 - (SUM([order_sessions]) / ZN(SUM([atc_sessions])))' />
+      </column>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+    </datasource>
+    <datasource caption='THREADLINE_Search_Intelligence (CSV Extract)' inline='true' name='federated.threadline_search' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='vw_tableau_search_intelligence' name='textscan.threadline_search'>
+            <connection class='textscan' directory='./extracts' filename='vw_tableau_search_intelligence.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.threadline_search' name='vw_tableau_search_intelligence.csv' table='[vw_tableau_search_intelligence#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='search_date' ordinal='0' />
+            <column datatype='string' name='normalized_query' ordinal='1' />
+            <column datatype='string' name='experiment_variant' ordinal='2' />
+            <column datatype='string' name='device_type' ordinal='3' />
+            <column datatype='integer' name='search_volume' ordinal='4' />
+            <column datatype='real' name='avg_results_returned' ordinal='5' />
+            <column datatype='integer' name='zero_result_searches' ordinal='6' />
+            <column datatype='integer' name='clicked_searches' ordinal='7' />
+            <column datatype='integer' name='abandoned_searches' ordinal='8' />
+            <column datatype='real' name='search_ctr_pct' ordinal='9' />
+            <column datatype='real' name='abandonment_rate_pct' ordinal='10' />
+          </columns>
+        </relation>
+      </connection>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='1. Daily Funnel &amp; CVR by Device'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='THREADLINE_Daily_Funnel (CSV Extract)' name='federated.threadline_daily_funnel' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.threadline_daily_funnel].[Calculation_Session_CVR]</rows>
+        <cols>[federated.threadline_daily_funnel].[activity_date]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='2. Search CTR &amp; Zero-Result Split'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='THREADLINE_Search_Intelligence (CSV Extract)' name='federated.threadline_search' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+          </pane>
+        </panes>
+        <rows>[federated.threadline_search].[normalized_query]</rows>
+        <cols>[federated.threadline_search].[search_volume]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='THREADLINE Executive Discovery &amp; Funnel Board'>
+      <style />
+      <size maxheight='900' maxwidth='1440' minheight='900' minwidth='1440' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='1' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='50000' id='2' name='1. Daily Funnel &amp; CVR by Device' w='100000' x='0' y='0' />
+          <zone h='50000' id='3' name='2. Search CTR &amp; Zero-Result Split' w='100000' x='0' y='50000' />
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='THREADLINE Executive Discovery &amp; Funnel Board'>
+      <viewpoints>
+        <viewpoint name='1. Daily Funnel &amp; CVR by Device' />
+        <viewpoint name='2. Search CTR &amp; Zero-Result Split' />
+      </viewpoints>
+    </window>
+  </windows>
+</workbook>

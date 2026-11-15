@@ -1,0 +1,25 @@
+﻿category_name,parent_department,product_id,sku,product_title,brand,fabric,fit_profile,price,rating_avg,return_rate_pct,pdp_views,add_to_carts,units_sold,gross_revenue
+Raw & Selvedge Denim Utility,Menswear,prd_017,TL-DEN-001,Okayama 13.5oz Selvedge Straight Jean,Noma Hardware,100% Japanese Shuttle-Loomed Selvedge Cotton (13.5 oz),Runs Small - Size Up,6490.0,2.8,16.9,21,9,295,1914550.0
+Raw & Selvedge Denim Utility,Menswear,prd_018,TL-DEN-002,Marseille Garment-Dyed Canvas Chore Jacket,Noma Hardware,100% Organic Cotton Bull Canvas (360 GSM),Relaxed Tailored,5890.0,2.5,6.2,34,15,1030,6066700.0
+Raw & Selvedge Denim Utility,Menswear,prd_019,TL-DEN-003,Kojima Barrel-Leg High-Rise Women's Jean,Noma Hardware,"99% Organic Cotton, 1% Comfort Elastane",True to Size,5290.0,2.2,9.8,18,7,250,1322500.0
+Raw & Selvedge Denim Utility,Menswear,prd_020,TL-DEN-004,Arles Heavyweight Herringbone Utility Pant,Noma Hardware,100% Cotton Herringbone Twill (310 GSM),True to Size,4590.0,3.0,5.5,20,7,156,716040.0
+Architectural Knitwear & Separates,Womenswear,prd_013,TL-KNT-001,Alma Extra-Fine Merino Ribbed Cardigan,Aurelia Knit,100% RWS-Certified Extra-Fine Merino Wool,True to Size,5490.0,3.4,6.1,15,9,329,1806210.0
+Architectural Knitwear & Separates,Womenswear,prd_014,TL-KNT-002,Sloane Milano-Knit Column Midi Skirt,Aurelia Knit,"72% Ecovero Viscose, 28% PBT Stretch Filament",True to Size,4690.0,3.8,5.8,23,6,104,487760.0
+Architectural Knitwear & Separates,Womenswear,prd_015,TL-KNT-003,Marais Oversized Cashmere-Blend Crewneck,Aurelia Knit,"70% Recycled Cashmere, 30% Extra-Fine Merino",Oversized Architectural,7990.0,3.0,8.4,16,6,258,2061420.0
+Architectural Knitwear & Separates,Womenswear,prd_016,TL-KNT-004,Helena Mock-Neck Sleeveless Knit Shell,Kora & Loom,"85% Organic Combed Cotton, 15% Silk",True to Size,2490.0,2.5,4.2,6,3,45,112050.0
+Linen & Breathable Tailoring,Womenswear,prd_001,TL-LIN-001,Valence Belted European Linen Blazer,Atelier Vance,100% European Flax Linen (185 GSM),Relaxed Tailored,6890.0,4.0,6.4,25,11,216,1488240.0
+Linen & Breathable Tailoring,Womenswear,prd_002,TL-LIN-002,Solstice High-Waist Pleated Linen Trouser,Atelier Vance,100% European Flax Linen,Runs Small - Size Up,4490.0,2.5,18.2,19,10,513,2303370.0
+Linen & Breathable Tailoring,Womenswear,prd_003,TL-LIN-003,Aerin Poplin & Linen Popover Shirt,Kora & Loom,"65% Belgian Linen, 35% Long-Staple Organic Cotton",True to Size,3290.0,3.25,5.1,21,5,147,483630.0
+Linen & Breathable Tailoring,Womenswear,prd_004,TL-LIN-004,Cannes Asymmetric Linen Waistcoat,Soraia Studio,100% Heavyweight Linen Twill,Runs Small - Size Up,3890.0,2.75,14.8,7,4,36,140040.0
+Artisanal Leather Footwear & Bags,Footwear & Accessories,prd_021,TL-LTH-001,Palermo Unlined Calfskin Penny Loafer,Tierra Leather,100% Full-Grain Vegetable-Tanned Tuscan Calfskin,Runs Small - Size Up,8490.0,2.4,14.2,17,6,98,832020.0
+Artisanal Leather Footwear & Bags,Footwear & Accessories,prd_022,TL-LTH-002,Arco Sculptural Saddle-Leather Everyday Tote,Tierra Leather,100% LWG Gold-Rated Pebbled Saddle Leather,True to Size,10990.0,4.25,3.8,18,12,378,4154220.0
+Artisanal Leather Footwear & Bags,Footwear & Accessories,prd_023,TL-LTH-003,Siena Woven Leather Mule Sandal,Tierra Leather,100% Hand-Woven Lambskin Nappa,True to Size,6290.0,3.0,7.1,13,2,93,584970.0
+Artisanal Leather Footwear & Bags,Footwear & Accessories,prd_024,TL-LTH-004,Castel Solid Brass & Bridle Leather Belt,Tierra Leather,100% 4mm Full-Grain Bridle Leather & Solid Brass,True to Size,2990.0,4.0,2.9,10,3,54,161460.0
+Menswear Relaxed Sartorial,Menswear,prd_009,TL-MEN-001,Como Camp-Collar Slub Linen Shirt,Veranda Collective,100% Italian Slub Linen (170 GSM),Relaxed Tailored,3690.0,4.25,4.9,15,8,294,1084860.0
+Menswear Relaxed Sartorial,Menswear,prd_010,TL-MEN-002,Brera Unstructured Hopsack Travel Blazer,Veranda Collective,"55% Virgin Wool, 45% Flax Linen Hopsack",True to Size,9490.0,3.5,7.6,26,15,328,3112720.0
+Menswear Relaxed Sartorial,Menswear,prd_011,TL-MEN-003,Luca Gurkha-Waist Tapered Cotton Trouser,Veranda Collective,100% Combed Organic Cotton Cavalry Twill (280 GSM),Runs Small - Size Up,4990.0,3.0,15.6,17,5,164,818360.0
+Menswear Relaxed Sartorial,Menswear,prd_012,TL-MEN-004,Vespera Fine-Knit Silk-Cotton Polo,Aurelia Knit,"70% Supima Cotton, 30% Mulberry Silk",True to Size,4190.0,2.0,5.3,6,3,56,234640.0
+Contemporary Occasion & Evening,Womenswear,prd_005,TL-OCC-001,Seraphina Bias-Cut Mulberry Silk Midi Dress,Soraia Studio,100% 22-Momme Mulberry Silk Satin,Runs Small - Size Up,8990.0,2.75,16.5,24,11,420,3775800.0
+Contemporary Occasion & Evening,Womenswear,prd_006,TL-OCC-002,Mirabel Pleated Architectural Column Gown,Méridian Paris,100% Recycled Japanese Triacetate Crepe,True to Size,11490.0,3.5,9.2,20,9,110,1263900.0
+Contemporary Occasion & Evening,Womenswear,prd_007,TL-OCC-003,Celeste Draped Cupro Wrap Midi Dress,Soraia Studio,100% Bemberg Sandwashed Cupro,True to Size,6290.0,5.0,6.8,22,9,264,1660560.0
+Contemporary Occasion & Evening,Womenswear,prd_008,TL-OCC-004,Nocturne Structured Poplin Poise Midi,Méridian Paris,"97% Organic Cotton Poplin, 3% Elastane",Runs Small - Size Up,7490.0,2.75,13.4,12,4,117,876330.0
