@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     const backendOrigin =
       process.env.BACKEND_URL ||
       process.env.NEXT_PUBLIC_API_URL ||
-      "https://threadline-backend-jainyadul-2706s-projects.vercel.app";
+      "https://threadline-backend.vercel.app";
     return [
       {
         source: "/api/:path*",
